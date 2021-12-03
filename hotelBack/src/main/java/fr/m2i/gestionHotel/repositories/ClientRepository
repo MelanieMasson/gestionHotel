@@ -1,0 +1,15 @@
+package fr.m2i.gestionHotel.repositories;
+
+import fr.m2i.medical.entities.ClientEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ClientRepository extends CrudRepository<ClientEntity , Integer> {
+
+    Iterable<ClientEntity> findByNomComplet( String nomComplet );
+
+    Iterable<ClientEntity> findByNomCompletContains( String nomComplet );
+
+    Iterable<PatientEntity> findByNomCompletContainsOrEmailContainsOrAdresseContains( String nomComplet , String email, String adresse );
+
+
+}
