@@ -1,0 +1,17 @@
+package fr.m2i.gestionHotel.repositories;
+
+import fr.m2i.medical.entities.AdminEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+
+public interface AdminRepository extends JpaRepository<AdminEntity, Integer> {
+
+    public AdminEntity findByUsername(String username);
+
+    public AdminEntity findByUsernameContains(String username);
+
+    public AdminEntity findByUsernameOrRole(String username, String role);
+
+}

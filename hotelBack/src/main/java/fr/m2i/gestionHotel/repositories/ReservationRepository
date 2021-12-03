@@ -1,0 +1,11 @@
+package fr.m2i.gestionHotel.repositories;
+
+import fr.m2i.medical.entities.ReservationEntity;
+import org.springframework.data.repository.CrudRepository;
+
+public interface ReservationRepository extends CrudRepository<ReservationEntity , Integer> {
+
+    Iterable<ReservationEntity> findByChambre( int numChambre );
+
+    Iterable<ReservationEntity>findByClientContainsOrHotelContainsOrDatedebutContainsOrDatefinContainsOrChambreContains( ClientEntity client , HotelEntity hotel, Date datedeb, Date datefin, int numChambre );
+}
