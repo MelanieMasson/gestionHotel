@@ -12,6 +12,6 @@ public interface AdminRepository extends JpaRepository<AdminEntity, Integer> {
 
     public AdminEntity findByUsernameContains(String username);
 
-    public AdminEntity findByUsernameOrRole(String username, String role);
+    public AdminEntity findByUsernameContainsOrRole(String username, String role);
 
 }
