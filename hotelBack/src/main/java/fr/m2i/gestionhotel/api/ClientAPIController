@@ -1,8 +1,8 @@
-package fr.m2i.medical.api;
+package fr.m2i.gestionhotel.api;
 
-import fr.m2i.medical.entities.ClientEntity;
-import fr.m2i.medical.repositories.ClientRepository;
-import fr.m2i.medical.service.ClientService;
+import fr.m2i.gestionhotel.entities.ClientEntity;
+import fr.m2i.gestionhotel.repositories.ClientRepository;
+import fr.m2i.gestionhotel.service.ClientService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

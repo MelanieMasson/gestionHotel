@@ -1,6 +1,6 @@
-package fr.m2i.gestionHotel.repositories;
+package fr.m2i.gestionhotel.repositories;
 
-import fr.m2i.medical.entities.AdminEntity;
+import fr.m2i.gestionhotel.entities.AdminEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 

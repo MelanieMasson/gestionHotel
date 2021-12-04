@@ -1,4 +1,4 @@
-package fr.m2i.gestionHotel.entities;
+package fr.m2i.gestionhotel.entities;
 
 import javax.persistence.*;
 import java.util.Objects;

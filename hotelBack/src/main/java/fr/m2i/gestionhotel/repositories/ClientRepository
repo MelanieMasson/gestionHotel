@@ -1,6 +1,6 @@
-package fr.m2i.gestionHotel.repositories;
+package fr.m2i.gestionhotel.repositories;
 
-import fr.m2i.medical.entities.ClientEntity;
+import fr.m2i.gestionhotel.entities.ClientEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ClientRepository extends CrudRepository<ClientEntity , Integer> {

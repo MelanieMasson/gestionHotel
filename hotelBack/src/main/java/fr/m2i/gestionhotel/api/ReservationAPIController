@@ -1,7 +1,8 @@
-package fr.m2i.medical.api;
+package fr.m2i.gestionhotel.api;
 
-import fr.m2i.medical.entities.ReservationEntity;
-import fr.m2i.medical.service.ReservationService;
+import fr.m2i.gestionhotel.entities.ReservationEntity;
+import fr.m2i.gestionhotel.service.ReservationService;
+import fr.m2i.gestionhotel.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

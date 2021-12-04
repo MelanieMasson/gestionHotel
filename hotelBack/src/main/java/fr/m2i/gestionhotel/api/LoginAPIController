@@ -1,10 +1,10 @@
-package fr.m2i.medical.api;
+package fr.m2i.gestionhotel.api;
 
-import fr.m2i.medical.entities.AdminEntity;
-import fr.m2i.medical.repositories.AdminRepository;
-import fr.m2i.medical.security.AdminDetailsImpl;
-import fr.m2i.medical.service.StorageServiceImpl;
-import fr.m2i.medical.service.AdminService;
+import fr.m2i.gestionhotel.entities.AdminEntity;
+import fr.m2i.gestionhotel.repositories.AdminRepository;
+import fr.m2i.gestionhotel.security.AdminDetailsImpl;
+import fr.m2i.gestionhotel.service.StorageServiceImpl;
+import fr.m2i.gestionhotel.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
