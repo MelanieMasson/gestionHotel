@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="06e78c93-20d0-4c47-a9d9-d8158c8c19e3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel/entities/ReservationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel/entities/ReservationEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel/repositories/AdminRepository" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel/repositories/AdminRepository" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,13 +52,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel/repositories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionHotel" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1321004" />
     <property name="project.structure.side.proportion" value="0.152439" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\formationPOEJava\workspace\gestionHotel\hotelBack\src\main\java\fr\m2i\gestionHotel" />
       <recent name="D:\formationPOEJava\workspace\gestionHotel\hotelBack\src\main\java\fr\m2i\gestionHotel\repositories" />
       <recent name="D:\formationPOEJava\workspace\gestionHotel\src\main\resources" />
     </key>
@@ -76,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638542841556</updated>
-      <workItem from="1638542848031" duration="8794000" />
+      <workItem from="1638542848031" duration="9224000" />
     </task>
     <task id="LOCAL-00001" summary="liaison de la database">
       <created>1638543447809</created>
@@ -127,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638547851370</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add api controller">
+      <created>1638657246910</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638657246910</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +144,7 @@
     <MESSAGE value="création entities" />
     <MESSAGE value="verification relations" />
     <MESSAGE value="add repositories" />
-    <option name="LAST_COMMIT_MESSAGE" value="add repositories" />
+    <MESSAGE value="add api controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="add api controller" />
   </component>
 </project>
