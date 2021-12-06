@@ -1,7 +1,0 @@
-package fr.m2i.gestionhotel.repov2;
-
-import fr.m2i.gestionhotel.entities.HotelEntity;
-import org.springframework.data.repository.CrudRepository;
-
-public interface HotelRepository extends CrudRepository<HotelEntity , Integer> {
-}

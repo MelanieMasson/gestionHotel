@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-interface HotelRepository extends CrudRepository<HotelEntity , Integer> {
+interface HotelRepository extends CrudRepository<HotelEntity, Integer> {
 }
 
 @Service
@@ -26,23 +26,11 @@ public class HotelService {
         return hr.findAll();
     }
 
-    public Iterable<HotelEntity> findAll(String search) {
-        if (search != null && search.length() > 0) {
-            //return hr.findByNomContainsOrEmailContainsOrAdresseContainsOrVilleContains(search, search, search, search);
-            return null;
-        }
-        return hr.findAll();
-    }
-
-    public HotelEntity findHotel(int id) {
+    public HotelEntity findHotelById(int id) {
         return hr.findById(id).get();
     }
 
-    public void deleteHotel(int id) {
-        hr.deleteById(id);
-    }
-
-    public static boolean validate(String emailStr) {
+    public static boolean validateEmail(String emailStr) {
         Pattern VALID_EMAIL_ADDRESS_REGEX =
                 Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
@@ -56,7 +44,7 @@ public class HotelService {
             throw new InvalidObjectException("Nom invalide (trop court)");
         }
 
-        if (h.getEtoiles() < 5 || h.getEtoiles() > 0 ) {
+        if (h.getEtoiles() < 5 || h.getEtoiles() > 0) {
             throw new InvalidObjectException("Nombre d'étoiles invalide (doit être compris entre 0 et 5)");
         }
 
@@ -64,9 +52,9 @@ public class HotelService {
             throw new InvalidObjectException("Adresse invalide (trop court)");
         }
         if (h.getTelephone().length() <= 8) {
-            throw new InvalidObjectException("Téléphone invalide (trop court)");
+            throw new InvalidObjectException("Téléphone invalide");
         }
-        if (h.getEmail().length() <= 5 || !validate(h.getEmail())) {
+        if (h.getEmail().length() <= 5 || !validateEmail(h.getEmail())) {
             throw new InvalidObjectException("Email invalide");
         }
     }
@@ -78,17 +66,22 @@ public class HotelService {
 
     public void editHotel(int id, HotelEntity h) throws InvalidObjectException {
         checkHotel(h);
-        try{
+        try {
             HotelEntity hExistant = hr.findById(id).get();
-            hExistant.setNom( h.getNom() );
-            hExistant.setEtoiles( h.getEtoiles() );
-            hExistant.setAdresse( h.getAdresse() );
-            hExistant.setTelephone( h.getTelephone() );
-            hExistant.setEmail( h.getEmail() );
-            hExistant.setVille( h.getVille() );
+            hExistant.setNom(h.getNom());
+            hExistant.setEtoiles(h.getEtoiles());
+            hExistant.setAdresse(h.getAdresse());
+            hExistant.setTelephone(h.getTelephone());
+            hExistant.setEmail(h.getEmail());
+            hExistant.setVille(h.getVille());
+            hr.save(hExistant);
 
-        }catch ( NoSuchElementException e ){
+        } catch (NoSuchElementException e) {
             throw e;
         }
+    }
+
+    public void deleteHotel(int id) {
+        hr.deleteById(id);
     }
 }

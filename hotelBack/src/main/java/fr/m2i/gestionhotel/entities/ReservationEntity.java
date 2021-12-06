@@ -80,7 +80,7 @@ public class ReservationEntity {
         return Objects.hash(id, datedeb, datefin, numChambre);
     }
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "client", referencedColumnName = "id", nullable = false)
     public ClientEntity getClient() {
         return client;
@@ -90,7 +90,7 @@ public class ReservationEntity {
         this.client = client;
     }
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "hotel", referencedColumnName = "id", nullable = false)
     public HotelEntity getHotel() {
         return hotel;
@@ -99,4 +99,5 @@ public class ReservationEntity {
     public void setHotel(HotelEntity hotel) {
         this.hotel = hotel;
     }
+
 }

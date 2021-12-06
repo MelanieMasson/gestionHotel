@@ -8,7 +8,7 @@ import java.util.Objects;
 public class HotelEntity {
     private int id;
     private String nom;
-    private Integer etoiles;
+    private int etoiles;
     private String adresse;
     private String telephone;
     private String email;
@@ -50,11 +50,11 @@ public class HotelEntity {
 
     @Basic
     @Column(name = "etoiles", nullable = true)
-    public Integer getEtoiles() {
+    public int getEtoiles() {
         return etoiles;
     }
 
-    public void setEtoiles(Integer etoiles) {
+    public void setEtoiles(int etoiles) {
         this.etoiles = etoiles;
     }
 

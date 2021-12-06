@@ -53,7 +53,7 @@ public class AdminEntity {
     }
 
     @Basic
-    @Column(name = "Role", nullable = false, length = 100)
+    @Column(name = "role", nullable = false, length = 100)
     public String getRole() {
         return role;
     }
