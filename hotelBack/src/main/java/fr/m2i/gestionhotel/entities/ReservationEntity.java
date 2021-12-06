@@ -2,7 +2,7 @@ package fr.m2i.gestionhotel.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.ukhi-til.Objects;
+import java.util.Objects;
 
 @Entity
 @Table(name = "reservation", schema = "gestion_hotel", catalog = "")

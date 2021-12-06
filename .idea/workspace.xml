@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="06e78c93-20d0-4c47-a9d9-d8158c8c19e3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotelBack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/HotelApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/HotelApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/entities/ReservationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/entities/ReservationEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hotelBack" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1321004" />
     <property name="project.structure.side.proportion" value="0.152439" />
@@ -97,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638542841556</updated>
-      <workItem from="1638542848031" duration="13931000" />
+      <workItem from="1638542848031" duration="15173000" />
     </task>
     <task id="LOCAL-00001" summary="liaison de la database">
       <created>1638543447809</created>
@@ -169,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638658679370</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="try hotelapplication">
+      <created>1638780457709</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638780457709</updated>
+    </task>
+    <task id="LOCAL-00012" summary="try hotelapplication">
+      <created>1638780481503</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1638780481503</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
