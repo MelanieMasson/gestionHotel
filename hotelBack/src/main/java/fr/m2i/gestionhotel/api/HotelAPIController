@@ -1,7 +1,6 @@
 package fr.m2i.gestionhotel.api;
 
 import fr.m2i.gestionhotel.entities.HotelEntity;
-import fr.m2i.gestionhotel.repositories.HotelRepository;
 import fr.m2i.gestionhotel.service.HotelService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +11,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import javax.servlet.http.HttpServletRequest;
 import java.io.InvalidObjectException;
 import java.net.URI;
-import java.sql.Date;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController

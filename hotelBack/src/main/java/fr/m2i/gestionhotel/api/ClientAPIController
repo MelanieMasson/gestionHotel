@@ -1,3 +1,4 @@
+/*
 package fr.m2i.gestionhotel.api;
 
 import fr.m2i.gestionhotel.entities.ClientEntity;
@@ -78,4 +79,4 @@ public class ClientAPIController {
         }
 
     }
-}
+}*/

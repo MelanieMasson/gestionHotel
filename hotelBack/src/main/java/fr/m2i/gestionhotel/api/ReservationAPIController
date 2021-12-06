@@ -1,3 +1,4 @@
+/*
 package fr.m2i.gestionhotel.api;
 
 import fr.m2i.gestionhotel.entities.ReservationEntity;
@@ -32,7 +33,7 @@ public class RdvAPIController {
     public ResponseEntity<Iterable<ReservationEntity>> getAll(HttpServletRequest request ){
         System.out.println( "\nVal recherchée = "+ request.getParameter("client") + "\n" );
         try {
-            return ResponseEntity.ok().body(rservice.findAll());
+            return ResponseEntity.ok().body(null); // rservice.findAll()
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
@@ -81,4 +82,4 @@ public class RdvAPIController {
         }
     }
 
-}
+}*/

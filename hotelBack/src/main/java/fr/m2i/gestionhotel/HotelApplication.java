@@ -3,10 +3,12 @@ package fr.m2i.gestionhotel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
+@ComponentScan({"fr.m2i.gestionhotel","fr.m2i.gestionhotel.repov2"})
 public class HotelApplication {
 
     public static void main(String[] args) {
