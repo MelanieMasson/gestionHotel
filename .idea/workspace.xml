@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06e78c93-20d0-4c47-a9d9-d8158c8c19e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hotelBack/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/entities/ReservationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hotelBack/src/main/java/fr/m2i/gestionhotel/entities/ReservationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelBack/gestionHotel.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotelFront/gestionhotel/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelFront/gestionhotel/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hotelFront/gestionhotel/src/environments/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638542841556</updated>
       <workItem from="1638542848031" duration="15173000" />
+      <workItem from="1638956431216" duration="112000" />
     </task>
     <task id="LOCAL-00001" summary="liaison de la database">
       <created>1638543447809</created>

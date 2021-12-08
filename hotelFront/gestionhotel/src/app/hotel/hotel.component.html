@@ -1,0 +1,94 @@
+<main class="container">
+
+    <div class="alert alert-success" *ngIf="success">Opération effetuée avec succès</div>
+    <div class="alert alert-danger" *ngIf="errorMessage.length > 0">{{errorMessage}}</div>
+
+    <h1>Liste des hotels</h1>
+
+    <button id="addbtn" class="btn btn-primary" [routerLink]="['addedit' , 0 ]">Ajouter un hotel</button>
+
+    <div id="no-items-message" class="alert alert-success" *ngIf="hotels?.length == 0">Aucun hotel trouvé</div>
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let hotel of hotels" class="col-4 mb-3 my-4">
+                <ng-container *ngTemplateOutlet="cart_template; context: {$implicit : hotel}"></ng-container>
+                </div>
+        </div>
+    </div>
+</main>
+
+<ng-template #cart_template let-hotel>
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between">
+                <div class="mr-auto p-2">
+                    <h5 class="card-title">{{hotel.nom}} - Hotel {{hotel.etoiles}} étoiles</h5>
+                </div>
+                <div class="ml-auto p-2">
+                    <button class="btn btn-secondary btn-sm" [routerLink]="['addedit' , hotel.id ]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <button class="btn btn-danger btn-sm" (click)="delete(hotel.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <hr>
+            <div class="card-text mt-3">
+                <p>
+                    <b>Email </b> : {{hotel.email}}<br>
+                    <b>Téléphone </b> : {{hotel.telephone}}<br>
+                </p>
+                <h2 class="h5">Adresse :</h2><p>{{hotel.adresse }} - {{hotel.ville}}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<!-- Partie avec modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotelForm.controls['id'].value == undefined">Ajouter un hotel</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotelForm.controls['id'].value != undefined">Editer un hotel</h5>
+                <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <form [formGroup]="hotelForm" (submit)="submit()">
+                <div class="modal-body">
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Nom *</label>
+                        <input class="form-control" type="nom" name="nom" placeholder="Nom de l'hotel" required formControlName="nom">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label>Nombre d'étoiles *</label>
+                        <input class="form-control" type="number" name="etoiles" placeholder="Nombre d'étoiles de l'hotel" required formControlName="etoiles">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Téléphone *</label>
+                        <input class="form-control" type="telephone" name="telephone" placeholder="Téléphone de l'hotel" required formControlName="telephone">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Email *</label>
+                        <input class="form-control" type="email" name="email" placeholder="Email de l'hotel" required formControlName="email">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Adresse *</label>
+                        <input class="form-control" type="adresse" name="adresse" placeholder="Adresse de l'hotel" required formControlName="adresse">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Ville *</label>
+                        <input class="form-control" type="ville" name="ville" placeholder="Ville" formControlName="ville">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!hotelForm.valid">Valider</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
