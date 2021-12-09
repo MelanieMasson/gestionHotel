@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ClientService } from 'src/app/services/client/client.service';
-import { CHECK_EMAIL, timeOutMessage } from 'src/environments/environment';
+import { timeOutMessage } from 'src/environments/environment';
 
 @Component({
   selector: 'app-clients-detail',
@@ -15,8 +15,8 @@ export class ClientsDetailComponent implements OnInit {
   clientForm = new FormGroup({
     id : new FormControl(""),
     nomComplet : new FormControl(""  , Validators.required ),
-    telephone : new FormControl(""  , [Validators.required]),
-    email : new FormControl( "", [Validators.pattern(CHECK_EMAIL)]),
+    telephone : new FormControl(""  , Validators.required),
+    email : new FormControl( "", [Validators.required, Validators.email]),
     adresse : new FormControl( "", Validators.required)
   });
   
@@ -30,48 +30,48 @@ export class ClientsDetailComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(['reservation'])
+    this.router.navigate(['clients'])
   }
 
-  resetForm(){
-    this.clientForm = new FormGroup({
-      id : new FormControl(""),
-      nomComplet : new FormControl(""  , Validators.required ),
-      telephone : new FormControl(""  , [Validators.required]),
-      email : new FormControl( "", [Validators.pattern(CHECK_EMAIL)]),
-      adresse : new FormControl( "", Validators.required)
-    });
-  }
+  // resetForm(){
+  //   this.clientForm = new FormGroup({
+  //     id : new FormControl(""),
+  //     nomComplet : new FormControl(""  , Validators.required ),
+  //     telephone : new FormControl(""  , [Validators.required]),
+  //     email : new FormControl( "", [Validators.required]),
+  //     adresse : new FormControl( "", Validators.required)
+  //   });
+  // }
 
   constructor(private aRoute: ActivatedRoute, private clientService:ClientService, private router:Router) {
-    let clientId = Number(this.aRoute.snapshot.paramMap.get('id'));
-    if (clientId > 0) {
-      this.clientService.findClientById(clientId).subscribe({
-        next: (data) => { this.clientForm.setValue(data) },
-        error: (err) => { this.showError(err.error.message) }
-      })
-    }
-   }
-
+  }
+  
   ngOnInit(): void {
+    let clientId = Number(this.aRoute.snapshot.paramMap.get('id'));
+    if (clientId) {
+      this.clientService.findClientById(clientId).subscribe(
+        data => this.clientForm.setValue(data) 
+      )
+    }
   }
 
   submit(){
     let client = this.clientForm.value;
-    let obs: Observable<any>;
-    if (client.id == undefined || client.id == "" || client.id == 0){
-      obs = this.clientService.addClient(client);
-    } else {
-      obs = this.clientService.editClient(client);
+    if( client.id == undefined || client.id == '' || client.id == 0 ){
+      this.clientService.addClient(client).subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['clients'])
+        }
+      )
+    }else{
+      this.clientService.editClient(client).subscribe(
+        data => {
+          console.log(data);
+          this.router.navigate(['clients'])
+        }
+      )
     }
-
-    obs.subscribe({
-      next: (data) => {
-        this.clientForm.reset();
-        this.router.navigate(['clients'])
-      },
-      error: (err) => { this.showError(err.error.message) }
-    })
   }
 
 }

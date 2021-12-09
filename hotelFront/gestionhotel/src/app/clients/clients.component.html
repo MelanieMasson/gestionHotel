@@ -1,12 +1,10 @@
 <main class="container">
 
     <div class="alert alert-success" *ngIf="success">Opération effetuée avec succès</div>
-    <div class="alert alert-danger" *ngIf="errorMessage.length > 0">{{errorMessage}}</div>
     
     <h1>Liste des clients</h1>
 
     <button id="addbtn" class="btn btn-primary" [routerLink]="['addedit' , 0 ]">Ajouter un client</button>
-    <div id="no-items-message" class="alert alert-success" *ngIf="clients?.length == 0">Aucun client trouvé</div>
 
     <div class="container">
         <div class="row">

@@ -5,7 +5,7 @@
 
     <h1>Liste des hotels</h1>
 
-    <button id="addbtn" class="btn btn-primary" [routerLink]="['addedit' , 0 ]">Ajouter un hotel</button>
+    <button id="addbtn" data-bs-toggle="modal" data-bs-target="#modalHotel" class="btn btn-primary">Ajouter un hotel</button>
 
     <div id="no-items-message" class="alert alert-success" *ngIf="hotels?.length == 0">Aucun hotel trouvé</div>
     <div class="container">
@@ -22,7 +22,12 @@
         <div class="card-body">
             <div class="d-flex justify-content-between">
                 <div class="mr-auto p-2">
-                    <h5 class="card-title">{{hotel.nom}} - Hotel {{hotel.etoiles}} étoiles</h5>
+                    <h5 class="card-title">{{hotel.nom}}</h5>                    
+                        <div class="d-flex">
+                            <div  *ngFor="let x of getTabEtoile(((hotel.etoiles == undefined) ? 0 : hotel.etoiles))">
+                                <i value="x" class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
                 </div>
                 <div class="ml-auto p-2">
                     <button class="btn btn-secondary btn-sm" [routerLink]="['addedit' , hotel.id ]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
@@ -42,51 +47,51 @@
 </ng-template>
 
 <!-- Partie modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modalHotel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotelForm.controls['id'].value == undefined">Ajouter un hotel</h5>
-                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotelForm.controls['id'].value != undefined">Editer un hotel</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotel.id == undefined">Ajouter un hotel</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotel.id != undefined">Editer un hotel</h5>
                 <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
             </div>
-            <form [formGroup]="hotelForm" (submit)="submit()">
+            <form ngNativeValidate (submit)="submit()">
                 <div class="modal-body">
 
                     <div class="form-line mb-4">
                         <label class="form-label">Nom *</label>
-                        <input class="form-control" type="nom" name="nom" placeholder="Nom de l'hotel" required formControlName="nom">
+                        <input class="form-control" type="nom" name="nom" placeholder="Nom de l'hotel" required [(ngModel)]="hotel.nom">
                     </div>
 
                     <div class="form-line mb-4">
-                        <label>Nombre d'étoiles *</label>
-                        <input class="form-control" type="number" name="etoiles" placeholder="Nombre d'étoiles de l'hotel" required formControlName="etoiles">
+                        <label class="form-label">Nombre d'étoiles</label>
+                        <input class="form-control" type="number" name="etoiles" [(ngModel)]="hotel.etoiles" required >
                     </div>
 
                     <div class="form-line mb-4">
                         <label class="form-label">Téléphone *</label>
-                        <input class="form-control" type="telephone" name="telephone" placeholder="Téléphone de l'hotel" required formControlName="telephone">
+                        <input class="form-control" type="telephone" name="telephone" placeholder="Téléphone de l'hotel" required [(ngModel)]="hotel.telephone">
                     </div>
 
                     <div class="form-line mb-4">
                         <label class="form-label">Email *</label>
-                        <input class="form-control" type="email" name="email" placeholder="Email de l'hotel" required formControlName="email">
+                        <input class="form-control" type="email" name="email" placeholder="Email de l'hotel" required [(ngModel)]="hotel.email">
                     </div>
 
                     <div class="form-line mb-4">
                         <label class="form-label">Adresse *</label>
-                        <input class="form-control" type="adresse" name="adresse" placeholder="Adresse de l'hotel" required formControlName="adresse">
+                        <input class="form-control" type="adresse" name="adresse" placeholder="Adresse de l'hotel" required [(ngModel)]="hotel.adresse">
                     </div>
 
                     <div class="form-line mb-4">
                         <label class="form-label">Ville *</label>
-                        <input class="form-control" type="ville" name="ville" placeholder="Ville" formControlName="ville">
+                        <input class="form-control" type="ville" name="ville" placeholder="Ville" required [(ngModel)]="hotel.ville">
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-primary" [disabled]="!hotelForm.valid">Valider</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
                 </div>
             </form>
         </div>

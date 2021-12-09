@@ -15,14 +15,14 @@ import java.util.NoSuchElementException;
 @RequestMapping("/api/client")
 public class ClientAPIController {
 
-    @Autowired
+
     private ClientService cservice;
 
     public ClientAPIController( ClientService cservice ){this.cservice = cservice;}
 
     @GetMapping(value="" , produces = "application/json")
-    public Iterable<ClientEntity> findAll( HttpServletRequest request ){
-        String search = request.getParameter("search");
+    public Iterable<ClientEntity> findAll( ){
+        //String search = request.getParameter("search");
         return cservice.findAll();
     }
 

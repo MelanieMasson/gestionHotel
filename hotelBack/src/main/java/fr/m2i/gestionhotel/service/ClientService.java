@@ -15,7 +15,7 @@ interface ClientRepository extends CrudRepository<ClientEntity , Integer> {
 
 @Service
 public class ClientService {
-    @Autowired
+
     private ClientRepository cr;
 
     public ClientService(ClientRepository cr){

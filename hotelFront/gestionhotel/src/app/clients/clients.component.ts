@@ -11,7 +11,7 @@ import { ClientService } from '../services/client/client.service';
 })
 export class ClientsComponent implements OnInit {
 
-  clients ?: Array<Client>;
+  clients: Array<Client> = [];
   errorMessage = "";
   success: boolean = false;
   searchVar :string = "";

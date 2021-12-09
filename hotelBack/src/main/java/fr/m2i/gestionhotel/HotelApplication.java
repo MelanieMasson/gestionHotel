@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan({"fr.m2i.gestionhotel","fr.m2i.gestionhotel.repov2"})
+@ComponentScan({"fr.m2i.gestionhotel","fr.m2i.gestionhotel.repositories"})
 public class HotelApplication {
 
     public static void main(String[] args) {

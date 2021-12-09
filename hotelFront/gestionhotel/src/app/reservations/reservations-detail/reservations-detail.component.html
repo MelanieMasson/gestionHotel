@@ -11,7 +11,7 @@
 
     <div class="form-line mb-4">
         <label class="form-label">Date de début de la réservation *</label>
-        <input class="form-control" type="date" name="datedeb" placeholder="dd/mm/yyyy" requiredformControlName="datedeb">
+        <input class="form-control" type="date" name="datedeb" placeholder="dd/mm/yyyy" required formControlName="datedeb">
     </div>
     <div [hidden]="reservationForm.controls['datedeb']?.pristine || reservationForm.controls['datedeb']?.valid" class="text-danger small"> Date de début de réservation requise </div>
     

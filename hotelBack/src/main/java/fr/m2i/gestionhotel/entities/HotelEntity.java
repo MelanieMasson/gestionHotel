@@ -13,11 +13,12 @@ public class HotelEntity {
     private String telephone;
     private String email;
     private String ville;
+    private String images;
 
     public HotelEntity() {
     }
 
-    public HotelEntity(int id, String nom, Integer etoiles, String adresse, String telephone, String email, String ville) {
+    public HotelEntity(int id, String nom, Integer etoiles, String adresse, String telephone, String email, String ville, String images) {
         this.id = id;
         this.nom = nom;
         this.etoiles = etoiles;
@@ -25,6 +26,7 @@ public class HotelEntity {
         this.telephone = telephone;
         this.email = email;
         this.ville = ville;
+        this.images = images;
     }
 
     @Id
@@ -46,6 +48,16 @@ public class HotelEntity {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    @Basic
+    @Column(name = "images", nullable = true, length = 200)
+    public String getImages() {
+        return images;
+    }
+
+    public void setImages(String images) {
+        this.images = images;
     }
 
     @Basic
@@ -103,12 +115,12 @@ public class HotelEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         HotelEntity that = (HotelEntity) o;
-        return id == that.id && Objects.equals(nom, that.nom) && Objects.equals(etoiles, that.etoiles) && Objects.equals(adresse, that.adresse) && Objects.equals(telephone, that.telephone) && Objects.equals(email, that.email) && Objects.equals(ville, that.ville);
+        return id == that.id && Objects.equals(images, that.images) && Objects.equals(nom, that.nom) && Objects.equals(etoiles, that.etoiles) && Objects.equals(adresse, that.adresse) && Objects.equals(telephone, that.telephone) && Objects.equals(email, that.email) && Objects.equals(ville, that.ville);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nom, etoiles, adresse, telephone, email, ville);
+        return Objects.hash(id, nom, etoiles, adresse, telephone, email, ville, images);
     }
 
 }

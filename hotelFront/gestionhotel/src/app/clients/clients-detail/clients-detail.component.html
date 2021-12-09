@@ -1,26 +1,27 @@
-<form [formGroup]="clientForm" (submit)="submit()" class="container">
+<div class="container">
+
     <h5 class="modal" id="modal" *ngIf="clientForm.controls['id'].value == undefined">Ajouter un client</h5>
     <h5 class="modal" id="modal" *ngIf="clientForm.controls['id'].value != undefined">Editer un client</h5>
-
-    <div class="alert alert-danger" *ngIf="errorMessage.length > 0">{{errorMessage}}</div>
-    <input type="hidden" formControlName="id">
-
+    <form [formGroup]="clientForm" (submit)="submit()" class="container">
+        
+    <!-- <div class="alert alert-danger" *ngIf="errorMessage.length > 0">{{errorMessage}}</div> -->
+    
     <div class="mb-3">
         <label for="nom" class="form-label">Nom complet *</label>
         <input type="text" class="form-control" id="nomComplet" name="nomComplet" formControlName="nomComplet"
-            placeholder="Nom complet" minlength="2" required>
+        placeholder="Nom complet" minlength="2" required>
     </div>
-
+    
     <div class="mb-3">
         <label for="telephone" class="form-label">Téléphone *</label>
         <input type="text" formControlName="telephone" class="form-control" id="telephone" name="telephone"
             placeholder="Téléphone" minlength="2" required>
     </div>
-
+    
     <div class="mb-3">
         <label for="email" class="form-label">Email *</label>
         <input type="text" formControlName="email" class="form-control" id="email" name="email"
-            placeholder="exampl@exampl.com" minlength="2" required>
+            placeholder="example@example.com" required>
     </div>
 
     <div class="mb-3">
@@ -30,8 +31,9 @@
     </div>
 
     <div class="d-flex">
-        <button type="submit" class="btn btn-primary" [disabled]="!clientForm.valid">Valider</button>
-        <button type="button" *ngIf="clientForm.controls['id']?.value != ''" (click)="goBack()"class="btn btn-danger float-end">Annuler</button>
-        <button type="button" *ngIf="clientForm.controls['id']?.value == ''" (click)="resetForm()"class="btn btn-danger float-end">Annuler</button>
+        <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid">Valider</button>
+        <button type="reset" (click)="goBack()"class="btn btn-danger float-end">Annuler</button>
+        <!-- <button type="button" *ngIf="clientForm.controls['id']?.value == ''" (click)="resetForm()"class="btn btn-danger float-end">Annuler</button> -->
     </div>
 </form>
+</div>

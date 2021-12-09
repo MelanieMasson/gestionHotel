@@ -104,7 +104,7 @@ export class ReservationsDetailComponent implements OnInit {
     obs.subscribe({
       next: (data) => {
         this.resetForm();
-        this.router.navigate(['reservation'])
+        this.router.navigate(['reservations'])
       },
       error: (err) => { this.showError(err.error.message) }
     })

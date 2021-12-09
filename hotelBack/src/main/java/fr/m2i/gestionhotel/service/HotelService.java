@@ -15,7 +15,7 @@ interface HotelRepository extends CrudRepository<HotelEntity, Integer> {
 
 @Service
 public class HotelService {
-    @Autowired
+
     private HotelRepository hr;
 
     public HotelService(HotelRepository hr) {
@@ -44,7 +44,7 @@ public class HotelService {
             throw new InvalidObjectException("Nom invalide (trop court)");
         }
 
-        if (h.getEtoiles() < 5 || h.getEtoiles() > 0) {
+        if (h.getEtoiles() > 5) {
             throw new InvalidObjectException("Nombre d'étoiles invalide (doit être compris entre 0 et 5)");
         }
 
@@ -74,6 +74,7 @@ public class HotelService {
             hExistant.setTelephone(h.getTelephone());
             hExistant.setEmail(h.getEmail());
             hExistant.setVille(h.getVille());
+            hExistant.setImages(h.getImages());
             hr.save(hExistant);
 
         } catch (NoSuchElementException e) {

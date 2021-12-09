@@ -27,7 +27,7 @@ export class ReservationService {
   }
 
   editReservation(reservation?:Reservation) : Observable<any>{
-    return this.http.post(environment.backendUri + this.serviceUri + "/" + reservation?.id, reservation, this.config.httpOptions);
+    return this.http.put(environment.backendUri + this.serviceUri + "/" + reservation?.id, reservation, this.config.httpOptions);
   }
 
   deleteReservation(id?:number) : Observable<any>{

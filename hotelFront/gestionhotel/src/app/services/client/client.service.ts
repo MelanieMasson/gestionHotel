@@ -15,23 +15,23 @@ export class ClientService {
   constructor( private http : HttpClient , private config : ConfigService) { }
 
   findAll() : Observable<Client[]>{
-    return this.http.get<Client[]>(environment.backendUri + this.serviceUri, this.config.httpOptions);
+    return this.http.get<Client[]>(environment.backendUri + 'client', this.config.httpOptions);
   }
 
   findClientById(id?:number) : Observable<Client>{
-    return this.http.get<Client>(environment.backendUri + this.serviceUri + "/" + id, this.config.httpOptions);
+    return this.http.get<Client>(environment.backendUri + "client/" + id, this.config.httpOptions);
   }
 
   addClient(client?:Client) : Observable<any>{
-    return this.http.post(environment.backendUri + this.serviceUri, client, this.config.httpOptions);
+    return this.http.post(environment.backendUri + "client", client, this.config.httpOptions);
   }
 
-  editClient(client?:Client) : Observable<any>{
-    return this.http.post(environment.backendUri + this.serviceUri + "/" + client?.id, client, this.config.httpOptions);
+  editClient(client:Client) : Observable<any>{
+    return this.http.put(environment.backendUri + "client/" + client.id, client, this.config.httpOptions);
   }
 
   deleteClient(id?:number) : Observable<any>{
-    return this.http.delete(environment.backendUri + this.serviceUri+id, this.config.httpOptions);
+    return this.http.delete(environment.backendUri +  "client/" + id, this.config.httpOptions);
   }
 
 }

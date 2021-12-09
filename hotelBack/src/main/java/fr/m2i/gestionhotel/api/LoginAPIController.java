@@ -19,12 +19,13 @@ public class LoginAPIController {
     @Autowired
     private AdminRepository ar;
 
+    @Autowired
     private PasswordEncoder encoder;
 
     private AdminService aservice;
 
     @PostMapping( value = "/api/login" ,  consumes = "application/json" ,  produces = "application/json")
-    public ResponseEntity<AdminEntity> findAdminByUsername( @RequestBody  AdminEntity a ) {
+    public ResponseEntity<AdminEntity> get( @RequestBody  AdminEntity a ) {
 
         AdminEntity admin = ar.findAdminByUsername( a.getUsername());
 
@@ -32,13 +33,13 @@ public class LoginAPIController {
             return ResponseEntity.notFound().build();
         } else {
             System.out.println( "encoded pass : " + a.getPassword() );
-            System.out.println( "pass en bd : " + a.getPassword() );
+            System.out.println( "pass en bd : " + admin.getPassword() );
 
-            if( encoder.matches( a.getPassword() , a.getPassword() ) ){
+            if( encoder.matches( a.getPassword() , admin.getPassword() ) ){
                 String encoding = Base64.getEncoder().encodeToString((a.getUsername()+":"+a.getPassword()).getBytes());
-                a.setPassword(encoding);
+                admin.setPassword(encoding);
 
-                return ResponseEntity.ok(a);
+                return ResponseEntity.ok(admin);
             }
             return ResponseEntity.badRequest().build();
         }

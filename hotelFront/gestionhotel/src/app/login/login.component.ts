@@ -28,15 +28,18 @@ export class LoginComponent implements OnInit {
         next: (data) => { 
           sessionStorage.setItem("connected" , "1" ); 
           sessionStorage.setItem("admin" , JSON.stringify(data) )
+          this.router.navigate(['clients'])
           this.app.admin = data
+
+          this.config.httpOptions.headers = new HttpHeaders({'Authorization' : "Basic " + data.password});
+          
+          
           console.log( "Basic " + data.password ); 
           console.log( this.config.httpOptions.headers )
           
-          this.config.httpOptions.headers = new HttpHeaders({'Authorization' : "Basic " + data.password});
-          this.router.navigate(['client'])
           
         },
-        error: (err) => { console.log(err.error.message) }
+        //error: (err) => { console.log(err.error.message) }
       }
     )
   }
