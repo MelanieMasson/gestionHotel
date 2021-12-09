@@ -6,9 +6,9 @@ import { ClientService } from 'src/app/services/client/client.service';
 import { CHECK_EMAIL, timeOutMessage } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-client-detail',
+  selector: 'app-clients-detail',
   templateUrl: './clients-detail.component.html',
-  styleUrls: ['./client-detail.component.css']
+  styleUrls: ['./clients-detail.component.css']
 })
 export class ClientsDetailComponent implements OnInit {
 

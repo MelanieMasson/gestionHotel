@@ -8,7 +8,8 @@ import { Admin } from 'src/app/classes/admin/admin';
 })
 export class AdminGuard implements CanActivate, CanActivateChild {
 
-  constructor(private router : Router){}
+  constructor(public router : Router){}
+  //constructor(private router : Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,

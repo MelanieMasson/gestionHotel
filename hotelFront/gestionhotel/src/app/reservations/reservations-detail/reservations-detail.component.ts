@@ -78,7 +78,7 @@ export class ReservationsDetailComponent implements OnInit {
   }
 
   goBack(){
-    this.router.navigate(['reservations'])
+    this.router.navigate(['reservation'])
   }
 
   resetForm(){
@@ -104,7 +104,7 @@ export class ReservationsDetailComponent implements OnInit {
     obs.subscribe({
       next: (data) => {
         this.resetForm();
-        this.router.navigate(['reservations'])
+        this.router.navigate(['reservation'])
       },
       error: (err) => { this.showError(err.error.message) }
     })

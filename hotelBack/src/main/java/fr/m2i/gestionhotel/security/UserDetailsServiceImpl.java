@@ -21,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         if(admin == null) {
             throw new UsernameNotFoundException("No user named " + username);
         } else {
-            return new fr.m2i.gestionhotel.security.UserDetailsImpl(admin);
+            return new UserDetailsImpl(admin);
         }
     }
 

@@ -10,7 +10,7 @@ import { AdminGuard } from '../guard/leave-admin.guard';
 })
 export class HeaderComponent implements OnInit {
 
-  //admin : Admin = new Admin();
+  admin : Admin = new Admin();
 
   constructor( private router : Router , public guard : AdminGuard) { }
   //constructor( private router : Router , public guard : AdminGuard , private cd: ChangeDetectorRef) { }
@@ -22,6 +22,11 @@ export class HeaderComponent implements OnInit {
     sessionStorage.removeItem("connected")
     sessionStorage.removeItem("admin")
     this.router.navigate(['login'])
+  }
+
+  // méthode permettant de vérifier si l'utilisateur est connécté ou pas
+  authenticated():boolean{
+    return sessionStorage.getItem("connected") !== null 
   }
 
 }

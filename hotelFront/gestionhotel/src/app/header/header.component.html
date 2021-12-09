@@ -1,5 +1,4 @@
-<!--<header class="mb-5" id="header" *ngIf="guard.isConnected()">-->
-<header class="mb-5" id="header" *ngIf="admin.authenticated()">
+<header class="mb-5" id="header" *ngIf="authenticated()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Gestion hotels</a>
@@ -18,12 +17,12 @@
             </div>
         </div>
 
-        <div id="admin-welcome">Bienvenue {{ admin.findAdminUsername() }}</div>
+        <div id="admin-welcome">Bienvenue {{ admin.username }}</div>
 
         <div class="dropdown  dropstart">
             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Mon compte</button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Profil</a></li>-->
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Profil</a></li>
                 <li><a class="dropdown-item" (click)="logout()">Déconnexion</a></li>
             </ul>
         </div>
