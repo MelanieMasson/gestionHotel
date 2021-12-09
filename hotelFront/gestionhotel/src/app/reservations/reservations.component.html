@@ -1,0 +1,45 @@
+<main class="container">
+
+    <div class="alert alert-success" *ngIf="success">Opération effetuée avec succès</div>
+
+    <h1>Liste des réservations</h1>
+
+    <button id="addbtn" class="btn btn-primary" [routerLink]="['addedit' , 0 ]">Ajouter une réservation</button>
+
+    <div class="form-line mb-4">
+        <label class="form-label">Recherche : </label>
+        <input type="text" id="search_input" name="search" placeholder="client" (click)="search()" [(ngModel)]="searchVar">
+    </div>
+
+    <div id="no-items-message" class="alert alert-success" *ngIf="reservations == null || reservations == undefined || reservations.length == 0">Aucune réservation trouvée</div>
+
+    <table id="reservationstable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom et prénom du client</th>
+                <th>Hotel</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Numéro de chambre</th>
+                <th> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let reservation of reservations" class="reservation">
+                <td>{{reservation.id}}</td>
+                <td>{{reservation.client?.nomComplet}}</td>
+                <td>{{reservation.hotel?.nom}}</td>
+                <td>{{reservation.datedeb}}</td>
+                <td>{{reservation.datefin}}</td>
+                <td>{{reservation.numChambre}}</td>
+                <td>
+                    <button class="btn btn-secondary btn-sm" [routerLink]="['addedit' , reservation?.id ]"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    <button class="btn btn-danger btn-sm" (click)="delete( reservation?.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</main>

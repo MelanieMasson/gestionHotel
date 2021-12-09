@@ -10,9 +10,10 @@ import { AuthGuard } from '../guard/leave-admin.guard';
 })
 export class HeaderComponent implements OnInit {
 
-  admin : Admin = new Admin();
+  //admin : Admin = new Admin();
 
-  constructor( private router : Router , public guard : AuthGuard , private cd: ChangeDetectorRef) { }
+  constructor( private router : Router , public guard : AuthGuard) { }
+  //constructor( private router : Router , public guard : AuthGuard , private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void { }
 

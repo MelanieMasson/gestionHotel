@@ -1,7 +1,8 @@
-<header class="mb-5" id="header" *ngIf="guard.isConnected()">
+<!--<header class="mb-5" id="header" *ngIf="guard.isConnected()">-->
+<header class="mb-5" id="header" *ngIf="auth.authenticated()">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gestion hotel</a>
+            <a class="navbar-brand" href="#">Gestion hotels</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -9,9 +10,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" [routerLink]="['client']">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link" [routerLink]="['hotel']">Hotels</a></li>
-                    <li class="nav-item"><a class="nav-link" [routerLink]="['reservation']">Réservations</a>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['clients']">Clients</a></li>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['hotels']">Hotels</a></li>
+                    <li class="nav-item"><a class="nav-link" [routerLink]="['reservations']">Réservations</a>
                     </li>
                 </ul>
             </div>
