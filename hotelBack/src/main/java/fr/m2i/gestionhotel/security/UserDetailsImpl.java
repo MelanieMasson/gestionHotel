@@ -34,6 +34,10 @@ public class UserDetailsImpl implements UserDetails {
         return admin.getUsername();
     }
 
+    public AdminEntity getAdmin(){
+        return admin;
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;

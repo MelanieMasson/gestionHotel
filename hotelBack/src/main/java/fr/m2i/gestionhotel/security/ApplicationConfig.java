@@ -29,6 +29,11 @@ public class ApplicationConfig extends WebSecurityConfigurerAdapter {
     protected void configure( AuthenticationManagerBuilder auth  ) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder( passwordEncoder() );
     }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 
     @Configuration
     @Order(1)
@@ -45,10 +50,5 @@ public class ApplicationConfig extends WebSecurityConfigurerAdapter {
                     )
                     .httpBasic();
         }
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 }

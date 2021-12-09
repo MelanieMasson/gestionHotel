@@ -16,7 +16,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // Check si le user existe en bd
         AdminEntity admin = adminRepository.findAdminByUsername(username);
 
         if(admin == null) {

@@ -5,24 +5,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClientComponent } from './client/client.component';
-import { ClientDetailComponent } from './client/client-detail/client-detail.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ClientsDetailComponent } from './clients/clients-detail/clients-detail.component';
 import { HeaderComponent } from './header/header.component';
-import { HotelComponent } from './hotel/hotel.component';
+import { HotelsComponent } from './hotels/hotels.component';
 import { LoginComponent } from './login/login.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { ReservationDetailComponent } from './reservation/reservation-detail/reservation-detail.component';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { ReservationsDetailComponent } from './reservations/reservations-detail/reservations-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    HotelComponent,
-    ReservationComponent,
-    ReservationDetailComponent,
-    ClientComponent,
-    ClientDetailComponent
+    HotelsComponent,
+    ReservationsComponent,
+    ReservationsDetailComponent,
+    ClientsComponent,
+    ClientsDetailComponent
   ],
   imports: [
     BrowserModule,
