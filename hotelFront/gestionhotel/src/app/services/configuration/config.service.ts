@@ -1,6 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthGuard } from 'src/app/guard/leave-admin.guard';
+import { AdminGuard } from 'src/app/guard/leave-admin.guard';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ConfigService {
     })
   }
   
-  constructor( private guard : AuthGuard ) {     
+  constructor( private guard : AdminGuard ) {     
     this.httpOptions = {
       headers : new HttpHeaders({
         'Authorization' : "Basic " + guard.findAdmin().password

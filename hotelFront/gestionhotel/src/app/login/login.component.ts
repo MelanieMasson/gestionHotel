@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from '../app.component';
 import { Admin } from '../classes/admin/admin';
-import { AuthGuard } from '../guard/leave-admin.guard';
+import { AdminGuard } from '../guard/leave-admin.guard';
 import { ConfigService } from '../services/configuration/config.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   username = ""
   password = ""
 
-  constructor( private http : HttpClient, private router : Router , private app : AppComponent, private guard: AuthGuard, private config: ConfigService) { }
+  constructor( private http : HttpClient, private router : Router , private app : AppComponent, private guard: AdminGuard, private config: ConfigService) { }
 
   ngOnInit(): void { }
 

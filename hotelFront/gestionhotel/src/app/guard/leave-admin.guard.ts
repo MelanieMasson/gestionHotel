@@ -6,7 +6,7 @@ import { Admin } from 'src/app/classes/admin/admin';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild {
+export class AdminGuard implements CanActivate, CanActivateChild {
 
   constructor(private router : Router){}
 

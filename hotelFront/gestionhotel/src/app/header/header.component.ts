@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Admin } from '../classes/admin/admin';
-import { AuthGuard } from '../guard/leave-admin.guard';
+import { AdminGuard } from '../guard/leave-admin.guard';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +12,8 @@ export class HeaderComponent implements OnInit {
 
   //admin : Admin = new Admin();
 
-  constructor( private router : Router , public guard : AuthGuard) { }
-  //constructor( private router : Router , public guard : AuthGuard , private cd: ChangeDetectorRef) { }
+  constructor( private router : Router , public guard : AdminGuard) { }
+  //constructor( private router : Router , public guard : AdminGuard , private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void { }
 
