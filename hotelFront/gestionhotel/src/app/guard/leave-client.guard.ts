@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { ClientDetailComponent } from '../client/client-detail/client-detail.component';
+import { ClientsDetailComponent } from '../clients/clients-detail/clients-detail.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClientGuard implements CanDeactivate<ClientDetailComponent> {
+export class ClientGuard implements CanDeactivate<ClientsDetailComponent> {
   canDeactivate(
-    component: ClientDetailComponent,
+    component: ClientsDetailComponent,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
