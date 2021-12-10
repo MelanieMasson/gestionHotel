@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -29,6 +29,7 @@ export class HotelsComponent implements OnInit {
   success: boolean = false;
 
   @ViewChild('closebutton') closebuttonelement: any;
+  @ViewChild('fileInput') inputEl: ElementRef | undefined;
 
 
   constructor( private hotelsService: HotelService) { }
@@ -113,10 +114,30 @@ export class HotelsComponent implements OnInit {
   }*/
 
   submit(){
+    let inputEl: HTMLInputElement = this.inputEl?.nativeElement;
+    console.log( inputEl.files );
+    
+    if (inputEl != undefined&& inputEl.files != undefined){
+      let fileCount:number = inputEl.files.length;
+      let formData = new FormData();
+
+      formData.append('nom', "" + this.hotel.nom);
+      formData.append('etoiles', "" + this.hotel.nom);
+      formData.append('adresse', "" + this.hotel.adresse);
+      formData.append('telephone', "" + this.hotel.telephone);
+      formData.append('email', "" + this.hotel.email);
+      formData.append('ville', "" + this.hotel.ville);
+      formData.append('images', "" + this.hotel.images);
+
+      if (fileCount > 0) {
+        formData.append('images', inputEl.files[0]);
+      }
+
+    }
     let obs: Observable<any>;
-    if (this.hotel.id == undefined) { // Ajout
+    if (this.hotel.id == undefined) {
       obs = this.hotelsService.addHotel(this.hotel);
-    } else { // Edition
+    } else {
       obs = this.hotelsService.editHotel(this.hotel);
     }
 

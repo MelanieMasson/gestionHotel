@@ -41,6 +41,7 @@
                     <b>Téléphone </b> : {{hotel.telephone}}<br>
                 </p>
                 <h2 class="h5">Adresse :</h2><p>{{hotel.adresse }} - {{hotel.ville}}</p>
+                <td><p></p></td>>
             </div>
         </div>
     </div>
@@ -55,7 +56,7 @@
                 <h5 class="modal-title" id="staticBackdropLabel" *ngIf="hotel.id != undefined">Editer un hotel</h5>
                 <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
             </div>
-            <form ngNativeValidate (submit)="submit()">
+            <form ngNativeValidate methode=entype (submit)="submit()">
                 <div class="modal-body">
 
                     <div class="form-line mb-4">
@@ -86,6 +87,11 @@
                     <div class="form-line mb-4">
                         <label class="form-label">Ville *</label>
                         <input class="form-control" type="ville" name="ville" placeholder="Ville" required [(ngModel)]="hotel.ville">
+                    </div>
+
+                    <div class="form-line mb-4">
+                        <label class="form-label">Photo *</label>
+                        <input class="form-control" #fileInput type="file" name="images">
                     </div>
 
                 </div>

@@ -75,6 +75,7 @@ public class HotelService {
             hExistant.setEmail(h.getEmail());
             hExistant.setVille(h.getVille());
             hExistant.setImages(h.getImages());
+
             hr.save(hExistant);
 
         } catch (NoSuchElementException e) {

@@ -6,6 +6,7 @@ export class Hotel {
     telephone?:string
     email?:string
     ville?:string
+    images?:string
 
     /*public constructor( _id : number , _nom : string , _etoiles : number , _adresse : string , _telephone : string , _email : string , _ville : string  ){
         this.id = _id;

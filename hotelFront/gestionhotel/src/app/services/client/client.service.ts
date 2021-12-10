@@ -14,8 +14,10 @@ export class ClientService {
 
   constructor( private http : HttpClient , private config : ConfigService) { }
 
-  findAll() : Observable<Client[]>{
-    return this.http.get<Client[]>(environment.backendUri + 'client', this.config.httpOptions);
+  findAll( s ?: string ) : Observable<Client[]>{
+    //return this.http.get<Client[]>(environment.backendUri + 'client', this.config.httpOptions);
+    console.log( environment.backendUri + "client" + ( s == undefined ? "" : "?search=" + s ) ) 
+    return this.http.get<Client[]>( environment.backendUri + "client" + ( s == undefined ? "" : "?search=" + s ), this.config.httpOptions ); 
   }
 
   findClientById(id?:number) : Observable<Client>{

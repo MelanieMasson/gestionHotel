@@ -6,10 +6,24 @@
 
     <button id="addbtn" class="btn btn-primary" [routerLink]="['addedit' , 0 ]">Ajouter une réservation</button>
 
-    <div class="form-line mb-4">
-        <label class="form-label">Recherche : </label>
+
+    <form method="get" (submit)="reloadClients()" id="searchForm">
+        <div class="row my-4">
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="search" placeholder="Rechercher" [(ngModel)]="search" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            </div>
+        </div>
+    </form>
+    <!--<div class="form-line mb-4">
+        <label class="form-label"> Recherche : </label>
         <input type="text" id="search_input" name="search" placeholder="client" (click)="search()" [(ngModel)]="searchVar">
-    </div>
+    </div>-->
 
     <div id="no-items-message" class="alert alert-success" *ngIf="reservations == null || reservations == undefined || reservations.length == 0">Aucune réservation trouvée</div>
 
